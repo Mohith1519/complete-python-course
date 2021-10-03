@@ -20,6 +20,23 @@ movies.append({
 #   - listing movies
 #   - finding movies
 
+def show_movies():
+    for movie in movies:
+        print_movie (movie)
+        
+def find_movie():
+    search_title = input("enter movie title")
+    
+    for movie in movies:
+        if movie["title"] == search_title:
+            print_movie(movie)
+            
+user_operation ={
+    "a" : add_movie,
+    "l" : show_movie,
+    "f" : find_movie
+}
+
 
 # And another function here for the user menu
 selection = input(MENU_PROMPT)
@@ -34,6 +51,7 @@ while selection != 'q':
         print('Unknown command. Please try again.')
 
     selection = input(MENU_PROMPT)
+    menu()
 
 
 # Remember to run the user menu function at the end!
